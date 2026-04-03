@@ -1,0 +1,102 @@
+.ai-profiler-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 24px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.ai-profiler-btn:hover {
+  background-color: #004182;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.ai-profiler-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+  z-index: 1000000;
+  transition: right 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+.ai-profiler-panel.open {
+  right: 0;
+}
+
+.ai-profiler-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ai-profiler-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #0a66c2;
+}
+.ai-profiler-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+.ai-profiler-content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+.ai-profiler-content h3 {
+  margin-top: 0;
+  color: #0a66c2;
+}
+.ai-profiler-content ul {
+  padding-left: 20px;
+}
+.ai-profiler-content li {
+  margin-bottom: 8px;
+}
+.ai-profiler-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+}
+.ai-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0a66c2;
+  border-radius: 50%;
+  animation: ai-spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+@keyframes ai-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
